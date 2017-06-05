@@ -7,11 +7,10 @@ gciPerform: receiverOopType selector: selector args: arrayOfGsOopTypes flags: fl
 			lib apiGciSetSessionId: gciSessionNumber.
 			address := lib addressOfArrayOfOopsForGsOopTypes: arrayOfGsOopTypes.
 			result := lib
-				apiGciPerformNoDebug_: receiverOopType
+				apiGciPerform_: receiverOopType
 				a: selector asString
 				a: address asInteger
 				a: arrayOfGsOopTypes size
-				a: flags
 				a: environmentId.
 			^ result asInteger = 20
 				ifTrue: [ nil gciResultToGsOopType: self ]
