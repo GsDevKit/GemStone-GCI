@@ -1,8 +1,7 @@
 {
+	"class" : {
+		 },
 	"instance" : {
+		"baseline:" : "DaleHenrichs 1/23/2019 16:31",
 		"initGci32xErrSType" : "dkh 4/6/2016 04:16",
-		"baseline:" : "DaleHenrichs 1/23/2019 15:20",
-		"initGsDevKitSupport" : "dkh 4/6/2016 04:55"
-	},
-	"class" : { }
-}
+		"initGsDevKitSupport" : "dkh 4/6/2016 04:55" } }

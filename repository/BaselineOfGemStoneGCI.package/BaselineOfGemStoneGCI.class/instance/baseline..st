@@ -49,7 +49,7 @@ baseline: spec
 		do: [ spec
 				configuration: 'UnifiedFFI'
 					with: [ spec
-						versionString: #development;
+						versionString: #stable;
 						repository: 'http://http://smalltalkhub.com/mc/Pharo/FFI-NB/main/' ];
 				yourself.
 			spec
