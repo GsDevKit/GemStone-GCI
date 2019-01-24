@@ -49,7 +49,7 @@ baseline: spec
 		do: [ spec
 				configuration: 'UnifiedFFI'
 					with: [ spec
-						versionString: #development;
+						versionString: #stable;
 						repository: 'http://http://smalltalkhub.com/mc/Pharo/FFI-NB/main/' ];
 				yourself.
 			spec
@@ -59,6 +59,9 @@ baseline: spec
 						requires: #('UnifiedFFI');
 						includes: #('GemStone-GCI-Pharo5x-Core') ];
 				yourself ].
+	spec
+		for: #(#'pharo6.x')
+		do: [ ].
 	spec
 		for: #(#'gs3.2.x' #'gs3.3.x' #'gs3.4.x')
 		do: [ spec
