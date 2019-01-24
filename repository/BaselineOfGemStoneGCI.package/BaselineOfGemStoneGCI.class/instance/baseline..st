@@ -68,7 +68,11 @@ baseline: spec
 		for: #(#'pharo5.x' #'pharo6.x')
 		do: [ spec
 				package: 'GemStone-GCI-Pharo5x-Core'
-					with: [ spec requires: #( 'GemStone-GCI-Core' ) ];
+					with: [ spec 
+								requires: #( 'GemStone-GCI-Core' ) ];
+				package: 'GemStone-GCI-Core'
+					with: [ spec
+								includes:  'GemStone-GCI-Pharo5x-Core' ];
 				yourself ].
 	spec
 		for: #(#'gs3.2.x' #'gs3.3.x' #'gs3.4.x')
