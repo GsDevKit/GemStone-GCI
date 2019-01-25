@@ -70,6 +70,7 @@ baseline: spec
 				package: 'GemStone-GCI-Pharo5x-Core'
 					with: [ spec 
 								requires: #( 'GemStone-GCI-Core' ) ];
+				package: 'GemStone-GCI-Tests' with: [ spec requires: 'GemStone-GCI-Pharo5x-Core' ];
 				package: 'GemStone-GCI-Core'
 					with: [ spec
 								includes:  'GemStone-GCI-Pharo5x-Core' ];
