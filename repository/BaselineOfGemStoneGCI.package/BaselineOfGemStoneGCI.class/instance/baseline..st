@@ -9,16 +9,8 @@ baseline: spec
 	spec
 		for: #(#pharo)
 		do: [ spec
-				baseline: 'Ston'
-					with: [ spec
-						loads: 'Core';
-						repository: 'github://GsDevKit/ston:v0.9.4/repository' ];
-				yourself.
-			spec
 				package: 'GemStone-GCI-Core'
-					with: [ spec
-						postLoadDoIt: #initGsDevKitSupport;
-						requires: #('Ston') ];
+					with: [ spec postLoadDoIt: #initGsDevKitSupport ];
 				package: 'GemStone-GCI-Tode-Compat' with: [ spec requires: #('GemStone-GCI-Core') ];
 				package: 'GemStone-GCI-Tests' with: [ spec requires: 'GemStone-GCI-Core' ];
 				yourself.
@@ -31,6 +23,14 @@ baseline: spec
 	spec
 		for: #(#'pharo3.x' #'pharo4.x')
 		do: [ spec
+				baseline: 'Ston'
+					with: [ spec
+						loads: 'Core';
+						repository: 'github://GsDevKit/ston:v0.9.4/repository' ];
+				yourself.
+			spec
+				package: 'GemStone-GCI-Core'
+					with: [ spec requires: #('Ston') ];
 				configuration: 'FFI'
 					with: [ spec
 						versionString: #stable;
@@ -47,21 +47,34 @@ baseline: spec
 	spec
 		for: #(#'pharo5.x')
 		do: [ spec
+				baseline: 'Ston'
+					with: [ spec
+						loads: 'Core';
+						repository: 'github://GsDevKit/ston:v0.9.4/repository' ];
+				yourself.
+			spec
+				package: 'GemStone-GCI-Core'
+					with: [ spec requires: #('Ston') ];
 				configuration: 'UnifiedFFI'
 					with: [ spec
 						versionString: #stable;
 						repository: 'http://http://smalltalkhub.com/mc/Pharo/FFI-NB/main/' ];
-				yourself.
-			spec
-				package: 'GemStone-GCI-Pharo5x-Core';
 				package: 'GemStone-GCI-Core'
 					with: [ spec
 						requires: #('UnifiedFFI');
 						includes: #('GemStone-GCI-Pharo5x-Core') ];
 				yourself ].
 	spec
-		for: #(#'pharo6.x')
-		do: [ ].
+		for: #(#'pharo5.x' #'pharo6.x')
+		do: [ spec
+				package: 'GemStone-GCI-Pharo5x-Core'
+					with: [ spec 
+								requires: #( 'GemStone-GCI-Core' ) ];
+				package: 'GemStone-GCI-Tests' with: [ spec requires: 'GemStone-GCI-Pharo5x-Core' ];
+				package: 'GemStone-GCI-Core'
+					with: [ spec
+								includes:  'GemStone-GCI-Pharo5x-Core' ];
+				yourself ].
 	spec
 		for: #(#'gs3.2.x' #'gs3.3.x' #'gs3.4.x')
 		do: [ spec
