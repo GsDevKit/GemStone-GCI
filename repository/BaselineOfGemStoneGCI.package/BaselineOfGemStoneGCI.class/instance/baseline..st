@@ -65,7 +65,7 @@ baseline: spec
 						includes: #('GemStone-GCI-Pharo5x-Core') ];
 				yourself ].
 	spec
-		for: #(#'pharo5.x' #'pharo6.x')
+		for: #(#'pharo5.x' #'pharo6.x' #'pharo7.x')
 		do: [ spec
 				package: 'GemStone-GCI-Pharo5x-Core'
 					with: [ spec 
