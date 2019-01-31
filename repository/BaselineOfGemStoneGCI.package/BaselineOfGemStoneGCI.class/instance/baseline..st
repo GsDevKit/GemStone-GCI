@@ -45,6 +45,22 @@ baseline: spec
 						includes: #('GemStone-GCI-Pharo3x-Core') ];
 				yourself ].
 	spec
+		for: #(#'pharo5.x')
+		do: [ spec
+				baseline: 'Ston'
+					with: [ spec
+						loads: 'Core';
+						repository: 'github://GsDevKit/ston:v0.9.4/repository' ];
+				yourself.
+			spec
+				package: 'GemStone-GCI-Core'
+					with: [ spec requires: #('Ston') ];
+				configuration: 'FFI'
+					with: [ spec
+						versionString: #stable;
+						repository: 'http://www.squeaksource.com/MetacelloRepository' ];
+				yourself ].
+	spec
 		for: #(#'pharo5.x' #'pharo6.x' #'pharo7.x')
 		do: [ spec
 				package: 'GemStone-GCI-Pharo5x-Core'
