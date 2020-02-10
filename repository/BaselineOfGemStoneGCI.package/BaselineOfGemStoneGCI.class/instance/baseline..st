@@ -76,7 +76,7 @@ baseline: spec
 								includes:  'GemStone-GCI-Pharo5x-Core' ];
 				yourself ].
 	spec
-		for: #(#'gs3.2.x' #'gs3.3.x' #'gs3.4.x')
+		for: #(#'gs3.2.x' #'gs3.3.x' #'gs3.4.x' #'gs3.5.x' #'gs3.6.x')
 		do: [ spec
 				package: 'GemStone-GCI-Server-Tests';
 				yourself.
